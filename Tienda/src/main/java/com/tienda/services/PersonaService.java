@@ -36,5 +36,6 @@ public class PersonaService {
     
      public Persona delete (Long id){
         personaRepository.deleteById(id);
+        return null;
         }
 }

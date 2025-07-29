@@ -4,6 +4,7 @@
  */
 package com.tienda.controllers;
 
+import com.tienda.entities.Persona;
 import com.tienda.services.PersonaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
