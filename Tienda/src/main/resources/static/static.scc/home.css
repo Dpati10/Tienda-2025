@@ -1,35 +1,23 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 4 jun 2025, 13:20:01
-    Author     : diego
-*/
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;  /*content-box  width considera el content, padding y el border*/
+    box-sizing: border-box;
     font-family: 'Silkscreen', cursive;
 }
- 
- 
-/*
-Unidades de medidas Relativas y Absolutas
- 
-*/
+
 body{
     height: 100vh;
     width: 100%;
-    background-image:url(https://www.google.com/imgres?q=olimpo%20logo&imgurl=https%3A%2F%2Fi.servimg.com%2Fu%2Ff62%2F19%2F79%2F26%2F12%2Fsin_ti10.png&imgrefurl=https%3A%2F%2Funavezenelolimpo.activo.mx%2F&docid=x6VvUxoyvOYPIM&tbnid=QYRMP2K58n2cfM&vet=12ahUKEwj6zfKD2tmNAxUXgYQIHSeEMQEQM3oECC0QAA..i&w=501&h=505&hcb=2&ved=2ahUKEwj6zfKD2tmNAxUXgYQIHSeEMQEQM3oECC0QAA.jpg);
+    background-image:url(../Images/Senna_1.jpg);
     background-position: center;
     background-size: cover;
     padding-left: 5%;
     padding-right: 5%;
     position: relative;
 }
- 
+
 header{
     width: 100%;
     height: 15vh;
@@ -37,32 +25,32 @@ header{
     display: flex;
     align-items: center;
 }
- 
+
 .logo{
     width: 160px;
     cursor: pointer;
 }
- 
+
 .selector-for-some-widget {
   box-sizing: content-box;
 }
- 
+
 nav{
     flex: 1;
-    padding-left: 60px;  
+    padding-left: 60px;   
 }
- 
+
 nav ul li{
     display: inline-block;
     list-style: none;
     margin: 1px 20px;        
 }
- 
+
 nav ul li a{
     text-decoration: none;
     color: #333;
 }
- 
+
 .content h1{
     font-size: 60px;
     font-weight: 100;
@@ -70,14 +58,14 @@ nav ul li a{
     margin-bottom: 15px;
     color: white;
 }
- 
+
 .content p{
     height: 50%;
     position: absolute;
     bottom: 50px;
     right: 160px;
 }
- 
+
 .myImage{
     height:50%;
     position: absolute;

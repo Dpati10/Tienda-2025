@@ -4,38 +4,54 @@
  */
 package com.tienda.services;
 
-import java.util.List;
-import java.util.Optional;
 import com.tienda.entities.Persona;
 import com.tienda.repositories.PersonaRepository;
-
+import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-/**
- *
- * @author diego
- */
 @Service
-public class PersonaService {
-    
+public class PersonaService implements IPersonaService  {
+
     @Autowired
     private PersonaRepository personaRepository;
-    
-    public List<Persona> findAll(){
+    @Override
+    public List<Persona> findAll() {
         return (List<Persona>) this.personaRepository.findAll();
     }
-    
-    public Persona save (Persona persona){
+    @Override
+    public Persona save(Persona persona) {
+
+        PasswordEncoder encoder = new BCryptPasswordEncoder();
+        String rawPassword = persona.getPassword(); // tu contraseña en texto plano
+        String hashedPassword = encoder.encode(rawPassword);
+        persona.setPassword(hashedPassword);
+        // Aqui se debe manejar la logica del tipo de usuario que se va agregar, si es ADMIN, USUARIO O VENDEDOR
+        // Por ejemplo, por default lo seteo en ADMIN
+
+        persona.setRoles("ADMIN");
+        persona.setPermissions("ADMIN");
+
+
         return personaRepository.save(persona);
     }
-    
-     public Optional<Persona> getById (Long id){
-        return personaRepository.findById(id);
-    }
-    
-     public Persona delete (Long id){
+
+    @Override
+    public Optional<Persona> getById(long id) {
+       return personaRepository.findById(id);}
+
+    @Override
+    public void delete(long id) {
         personaRepository.deleteById(id);
-        return null;
-        }
+    }
+
+    @Override
+    public Persona findByNombre(String nombre) {
+        return personaRepository.findByNombre(nombre);
+    }
+
+
 }
